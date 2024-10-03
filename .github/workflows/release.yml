@@ -26,12 +26,12 @@ jobs:
     secrets:
       CAP_GH_RELEASE_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
 
-#  release-npm:
-#    needs: ['build-packages', 'lint-test', 'unit-tests']
-#    uses: ./.github/workflows/reusable_release-npm.yml
-#    with:
-#      create-dev-release: false
-#      create-rc-release: false
-#    secrets:
-#      CAP_GH_RELEASE_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
-#      NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+  release-npm:
+    needs: ['build-packages', 'lint-test', 'unit-tests']
+    uses: ./.github/workflows/reusable_release-npm.yml
+    with:
+      create-dev-release: false
+      create-rc-release: false
+    secrets:
+      CAP_GH_RELEASE_TOKEN: ${{ secrets.CAP_GH_RELEASE_TOKEN }}
+      NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
